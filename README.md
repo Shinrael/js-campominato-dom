@@ -9,3 +9,5 @@ Al termine della partita il software deve comunicare il punteggio, cioè il nume
 ### Svolgimento
 1. Creo l'array bombs
 2. Creo la funzione per generare numeri casuali e pusharli dentro l'array creato.
+3. Creo la funzione per verificare se il numero cliccato è identico a quello nell'array bombs
+4. Nel click aggiungo un if che se è una bomba gli aggiungo la classe lose mentre se non lo è gli aggiungo la classe active.
