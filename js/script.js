@@ -31,6 +31,8 @@ createBombs();
 function reset() {
   const squares = document.querySelectorAll('.square');
   squares.forEach(square => square.classList.remove('active'));
+  squares.forEach(square => square.classList.remove('lose'));
+  createBombs();
 }
 
 // Creo la funzione per creare il quadrato
@@ -42,8 +44,10 @@ function createSquare(numero){
   sq.addEventListener('click', function(){
 
     if (isBomb(numero)) {
-      lose();
+      // Aggiungiamo la classe lose se clicchiamo la bomba
+      this.classList.add('lose');
     } else {
+
       // Aggiungiamo la classe active a ciò che clicchiamo e vediamo tramite la console a che numero corrisponde
     
     this.classList.add('active');
@@ -73,8 +77,3 @@ function isBomb(numero){
   return bombs.includes(numero);
 }
 
-function lose() {
-  const squareL = document.querySelectorAll('.square');
-
-  
-}
