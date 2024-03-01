@@ -37,13 +37,17 @@ createBombs();
 function reset() {
   const squares = document.querySelectorAll('.square');
   squares.forEach(square => square.classList.remove('active', 'lose'));
-
+  let score = document.getElementById('score');
+  score.innerHTML = '';
 }
 
 function showScore(){
+  // Inserendo in questa funzione solo i quadrati attivi posso inserire il punteggio corretto
+  
+  const activeSquare = document.querySelectorAll('.square.active');
   let score = document.getElementById('score');
   score.innerHTML = `
-  Hai totalizzato ${clickCounter} punti!
+  Hai totalizzato ${activeSquare.length} punti!
   `
 }
 
@@ -73,8 +77,9 @@ function createSquare(numero){
     this.classList.add('active');
     clickCounter++;
     console.log(numero);
+    
   }
-  })
+  });
     
   return sq;
   }
