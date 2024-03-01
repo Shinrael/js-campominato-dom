@@ -18,7 +18,7 @@ for(let i = 1; i <= 100; i++){
 }
 
 createBombs();
-console.log(bombs);
+
 
 
 
@@ -40,13 +40,19 @@ function createSquare(numero){
   sq.className = 'square'; 
 
   sq.addEventListener('click', function(){
-    // Aggiungiamo la classe active a ciò che clicchiamo e vediamo tramite la console a che numero corrisponde
+
+    if (isBomb(numero)) {
+      lose();
+    } else {
+      // Aggiungiamo la classe active a ciò che clicchiamo e vediamo tramite la console a che numero corrisponde
     
     this.classList.add('active');
     console.log(numero);
+  }
   })
+    
   return sq;
-}
+  }
 
 function createBombs(){
   // Finchè l'array bombs non raggiunge 16 numeri genero casualmente 
@@ -59,5 +65,16 @@ function createBombs(){
   }
 
   return bombs;
+  
+}
+
+// Creo la funziona per verificare se è una bomba
+function isBomb(numero){
+  return bombs.includes(numero);
+}
+
+function lose() {
+  const squareL = document.querySelectorAll('.square');
+
   
 }

@@ -28,3 +28,8 @@
   background-color: aquamarine;
   transform: rotateX(180deg) rotateY(180deg);
 }
+
+.square.lose{
+  background-color: red;
+  transform: rotateX(180deg) rotateY(180deg);
+}
